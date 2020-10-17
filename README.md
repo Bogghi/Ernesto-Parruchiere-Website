@@ -6,4 +6,4 @@ Technology used:
 
 - html
 - scss
-- jQuery
+- js + anime for animation
