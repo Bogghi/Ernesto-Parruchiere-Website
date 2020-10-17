@@ -1,0 +1,25 @@
+nav {
+
+    width: $navWidth;
+    height: $navHegth;
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    @extend %nav-text-style;
+
+    span.logo{
+        font-size: 30px;
+
+        img {
+            height: 30px;
+        }
+    }
+
+    ul {
+        @extend %list-inline;
+        font-weight: 400;
+    }
+
+}
