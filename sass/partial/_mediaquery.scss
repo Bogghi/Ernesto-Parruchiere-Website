@@ -1,0 +1,26 @@
+@media screen and (max-width: 1200px){
+    nav ul {
+        display: none;
+    }
+    
+    .container {
+        width: 900px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    .container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .mobile-menu {
+        display: none;
+    }
+}

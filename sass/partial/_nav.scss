@@ -21,4 +21,14 @@ nav {
         font-weight: 400;
     }
 
+    .mobile-menu {
+
+        i {
+            padding: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
 }

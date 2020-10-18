@@ -1,12 +1,12 @@
 %list-inline {
     display: flex;
     list-style: none;
+    cursor: pointer;
     li {
         padding: 20px;
-
-        &:hover{
-            background-color: $secondaryColor;
-        }
+        margin-right: 10px;
+        transition: background-color 0.3s;
+        border-radius: 5px;
     }
 }
 
