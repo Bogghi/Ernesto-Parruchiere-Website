@@ -1,0 +1,5 @@
+@mixin main-text-style($color: $tertiaryColor) {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $color;
+}

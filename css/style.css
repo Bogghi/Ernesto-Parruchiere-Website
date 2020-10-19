@@ -151,6 +151,75 @@ nav .mobile-menu i {
   cursor: pointer;
 }
 
+main .presentation {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
+}
+main .presentation-content {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .presentation-content h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #d1750c;
+}
+main .presentation-content p {
+  text-align: center;
+  font-weight: 400;
+}
+main .services {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
+  height: 800px;
+  background: #003a4c;
+  background: linear-gradient(90deg, #003a4c 0%, #00769c 57%, #0080a7 100%);
+}
+main .services-content {
+  display: flex;
+  height: 800px;
+  justify-content: space-between;
+  align-items: center;
+}
+main .services-content .card {
+  height: 600px;
+  width: 450px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #9a9a9a;
+  padding: 10px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .services-content .card h2 {
+  margin-bottom: 10px;
+}
+main .services-content .card p {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+main .services-content .card.haircut {
+  background-image: url("../img/haircut.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+  transition: background-size 0.3s;
+}
+main .services-content .card.barber {
+  background-image: url("../img/barber.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
 @media screen and (max-width: 1200px) {
   nav ul {
     display: none;
