@@ -1,0 +1,32 @@
+footer {
+    background-color: #303030;
+    color: #d4d4d4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 50px 0px;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+
+        hr {
+            height: 1px;
+            width: 100%;
+            background-color: white;
+            margin: 15px 0px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0px;
+
+            li {
+                padding: 5px 0px;
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+}

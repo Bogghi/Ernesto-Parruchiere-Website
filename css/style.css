@@ -411,6 +411,34 @@ main .item_open .close {
   transition: all 0.3s ease-in-out;
 }
 
+footer {
+  background-color: #303030;
+  color: #d4d4d4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 50px 0px;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-content hr {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  margin: 15px 0px;
+}
+footer .footer-content ul {
+  list-style: none;
+  padding: 0px;
+}
+footer .footer-content ul li {
+  padding: 5px 0px;
+}
+footer .footer-content ul li span {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1200px) {
   nav ul {
     display: none;
