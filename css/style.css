@@ -230,67 +230,16 @@ main .services-content .card.barber {
   background-repeat: no-repeat;
   background-position: center top;
 }
-main * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-main *:before, main *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-main body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #333;
-}
 main a {
   color: #fff;
 }
 main .row {
   width: 100%;
-  max-width: 1170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
-  padding: 0;
   clear: both;
-}
-main .row img {
-  max-width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-}
-main .gallery ul li {
-  float: left;
-  margin: 0 0.8771929825%;
-  overflow: hidden;
-}
-main header {
-  background-color: #84b4b1;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0 120px;
-}
-main header h1 {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 65px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  line-height: 0.8;
-  padding-top: 50px;
-  font-family: "Montserrat", sans-serif;
-}
-main header h1 span {
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-size: 25px;
-  line-height: 1;
-}
-main header p {
-  padding-top: 30px;
 }
 main .gallery {
   padding: 40px 60px 100px;
@@ -299,12 +248,19 @@ main .gallery {
 }
 main .gallery ul {
   padding-top: 50px;
-  position: relative;
+  display: flex;
 }
 main .gallery ul li {
+  margin: 0 0.8771929825%;
+  overflow: hidden;
   margin-bottom: 20px;
-  width: 23.2456140351%;
-  position: relative;
+  width: 25%;
+}
+main .gallery ul li img {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
 main .gallery ul li a {
   display: block;
@@ -355,7 +311,6 @@ main .port {
   height: 100%;
   top: 0;
   left: 0;
-  padding-top: 100px;
   background: #ffffff;
   background-color: #fafafa;
   z-index: 103;
@@ -368,11 +323,10 @@ main .port {
   transition: all 0.5s ease-in-out;
 }
 main .port img {
-  width: 50%;
+  width: 40%;
 }
 main .port .description {
-  float: left;
-  width: 50%;
+  width: 30%;
   max-height: 100%;
   padding: 0 40px 40px;
   overflow: auto;
@@ -416,6 +370,8 @@ main .close {
 }
 main .item_open .close {
   opacity: 1;
+  margin-top: 40px;
+  margin-right: 60px;
   top: 0px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
