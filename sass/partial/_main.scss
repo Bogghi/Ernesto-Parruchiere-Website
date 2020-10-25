@@ -27,15 +27,16 @@ main {
 
     .services {
         @include main-text-style(black);
-        height: 800px;
+        // height: 800px;
         background: rgb(0,58,76);
         background: linear-gradient(90deg, rgba(0,58,76,1) 0%, rgba(0,118,156,1) 57%, rgba(0,128,167,1) 100%);
 
         &-content {
             display: flex;
-            height: 800px;
+            padding: 100px 0px;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
 
             .card {
                 height: 600px;

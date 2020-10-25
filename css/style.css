@@ -36,6 +36,10 @@ header {
   background-color: #d1750c;
 }
 
+.col {
+  padding: 0px 20px;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -54,6 +58,10 @@ header {
   color: #ffffff;
 }
 
+header a {
+  text-decoration: none;
+  color: inherit;
+}
 header .menu {
   display: flex;
   background-color: #003a4c;
@@ -96,9 +104,10 @@ header .hero .hero-content .ml1 {
   font-size: 3.5em;
   margin-bottom: 40px;
 }
-header .hero .hero-content .ml1 .letter {
+header .hero .hero-content .ml1 .letters {
   display: inline-block;
   line-height: 1em;
+  text-align: center;
 }
 header .hero .hero-content .ml1 .text-wrapper {
   position: relative;
@@ -106,6 +115,7 @@ header .hero .hero-content .ml1 .text-wrapper {
   padding-top: 0.1em;
   padding-right: 0.05em;
   padding-bottom: 0.15em;
+  margin: 0px 10px;
 }
 header .hero .hero-content .ml1 .line {
   opacity: 0;
@@ -124,6 +134,7 @@ header .hero .hero-content .ml1 .line2 {
 }
 header .hero p {
   text-align: center;
+  padding: 0px 10px;
 }
 
 nav {
@@ -176,15 +187,15 @@ main .services {
   text-transform: uppercase;
   font-weight: 500;
   color: black;
-  height: 800px;
   background: #003a4c;
   background: linear-gradient(90deg, #003a4c 0%, #00769c 57%, #0080a7 100%);
 }
 main .services-content {
   display: flex;
-  height: 800px;
+  padding: 100px 0px;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 main .services-content .card {
   height: 600px;
@@ -450,6 +461,23 @@ footer .footer-content ul li span {
 
   .mobile-menu {
     display: block;
+  }
+
+  .presentation-content p {
+    padding: 0px 30px;
+  }
+
+  .services-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .services-content .haircut {
+    margin-bottom: 100px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
   }
 }
 @media screen and (max-width: 800px) {

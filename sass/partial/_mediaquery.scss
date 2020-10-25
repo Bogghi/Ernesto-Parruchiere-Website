@@ -11,6 +11,26 @@
         display: block;
     }
 
+    .presentation-content {
+        p {
+            padding: 0px 30px;
+        }
+    }
+
+    .services-content {
+        flex-direction: column;
+        justify-content: center;
+
+        .haircut {
+            margin-bottom: 100px;
+        }
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width: 800px){
