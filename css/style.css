@@ -447,5 +447,15 @@ footer .footer-content ul li span {
     display: none;
   }
 }
+@media screen and (max-width: 500px) {
+  .services-content div.card {
+    width: 90%;
+    height: 100vh;
+  }
+
+  header .hero .hero-content .ml1 {
+    font-size: 2.5em;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
