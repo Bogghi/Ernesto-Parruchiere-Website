@@ -35,6 +35,7 @@
     main {
         .gallery {
             padding: 0px;
+            margin:0px;
             ul{
                 display: none;
             }
@@ -43,6 +44,8 @@
         .port {
             visibility: visible;
             position: relative;
+            border-bottom: 0px;
+            transform: translateY(0%);
 
             img {
                 width: 90%;
@@ -60,6 +63,10 @@
                     padding: 0;
                     text-align: center; 
                 }
+            }
+
+            &:last-child {
+                padding-bottom: 80px;
             }
 
         }
