@@ -4,9 +4,11 @@ a {
 
 .row {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     // padding: 40px 60px 100px;
     clear: both; 
