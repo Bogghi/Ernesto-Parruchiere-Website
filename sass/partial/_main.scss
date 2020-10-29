@@ -4,11 +4,12 @@ main {
         @include main-text-style(black);
 
         &-content {
-            height: $presentationHeigth;
+            // height: $presentationHeigth;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 80px 0px;
 
             h2 {
                 font-size: 30px;
@@ -27,7 +28,6 @@ main {
 
     .services {
         @include main-text-style(black);
-        // height: 800px;
         background: rgb(0,58,76);
         background: linear-gradient(90deg, rgba(0,58,76,1) 0%, rgba(0,118,156,1) 57%, rgba(0,128,167,1) 100%);
 
