@@ -85,3 +85,15 @@ $(".gallery ul li a").click(function() {
         scrollTop: parseInt($("#top").offset().top)
     }, 400);
 });
+
+
+document.addEventListener("scroll",navBG);
+
+function navBG(){
+    let navbar = document.querySelector("nav");
+    if(document.documentElement.scrollTop > 100){
+        navbar.classList.add("scroll");
+    }else if(document.documentElement.scrollTop < 100){
+        navbar.classList.remove("scroll");
+    }
+}
