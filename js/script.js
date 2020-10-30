@@ -97,18 +97,18 @@ anime.timeline().add({
     });
 
 
-const ul = document.querySelectorAll("header ul li");
+const ul = document.querySelectorAll("header ul");
 
-ul.forEach(li => {
-    li.addEventListener("click", activeLiChange);
+ul.forEach(list => {
+    list.addEventListener("click", activeLiChange);
 });
 
 // animation of the li change
-function activeLiChange(){
-    let activeLi = document.querySelector("li.active");
-    if(this != activeLi){
-        this.classList.add("active");
-        console.log(activeLi.classList.remove("active"));
+function activeLiChange(e){
+    let activeLi = e.currentTarget.querySelector("li.active");
+
+    if(!e.currentTarget.isEqualNode(activeLi)){
+        e.target.classList.add("active");
         activeLi.classList.remove("active");
     }
 }
