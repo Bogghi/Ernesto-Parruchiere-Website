@@ -9,11 +9,12 @@ header{
 
     .menu{
         display: flex;
+        margin-top: $navHegth;
         background-color: $primaryColor;
         width: 100%;
-        height: 0%;
-        z-index: 1;
-        position: absolute;
+        height: 0px;
+        z-index: 2;
+        position: fixed;
         justify-content: center;
         text-align: center;
         padding-right: 20px;
@@ -34,6 +35,7 @@ header{
 
     .hero {
         height: $heroHeigth;
+        padding-top: $navHegth;
         background-image: url("../img/hero-background.jpg");
         background-size: cover;
         background-position: center top;

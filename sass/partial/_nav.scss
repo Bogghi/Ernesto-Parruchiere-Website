@@ -1,5 +1,7 @@
 nav {
 
+    position: fixed;
+    z-index: 3;
     width: $navWidth;
     height: $navHegth;
     background-color: $primaryColor;

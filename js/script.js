@@ -44,7 +44,7 @@ function showHbMenu (showVar) {
             opacity: [0,1],
             height: "320px",
             easing: "linear",
-            duration: 600,
+            duration: 200,
             delay: (el, i) => 70 * (i+1)
         })
         return true;
@@ -53,9 +53,9 @@ function showHbMenu (showVar) {
             targets: ".menu",
             opacity: 0,
             height: "0px",
-            duration: 1000,
+            duration: 200,
             easing: "easeOutExpo"
-            // delay: 400
+            // delay: 00
           });
         return false;
     }

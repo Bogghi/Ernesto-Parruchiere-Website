@@ -64,11 +64,12 @@ header a {
 }
 header .menu {
   display: flex;
+  margin-top: 100px;
   background-color: #003a4c;
   width: 100%;
-  height: 0%;
-  z-index: 1;
-  position: absolute;
+  height: 0px;
+  z-index: 2;
+  position: fixed;
   justify-content: center;
   text-align: center;
   padding-right: 20px;
@@ -87,6 +88,7 @@ header .menu ul li {
 }
 header .hero {
   height: 800px;
+  padding-top: 100px;
   background-image: url("../img/hero-background.jpg");
   background-size: cover;
   background-position: center top;
@@ -138,6 +140,8 @@ header .hero p {
 }
 
 nav {
+  position: fixed;
+  z-index: 3;
   width: 100%;
   height: 100px;
   background-color: #003a4c;
@@ -232,6 +236,7 @@ main .services-content .card.barber {
 }
 main a {
   color: #fff;
+  scroll-behavior: smooth;
 }
 main .row {
   width: 100%;
@@ -316,7 +321,7 @@ main .port {
   left: 0;
   background: #ffffff;
   background-color: #fafafa;
-  z-index: 103;
+  z-index: 2;
   visibility: hidden;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
