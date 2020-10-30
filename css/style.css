@@ -40,6 +40,11 @@ header {
   padding: 0px 20px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -58,10 +63,6 @@ header {
   color: #ffffff;
 }
 
-header a {
-  text-decoration: none;
-  color: inherit;
-}
 header .menu {
   display: flex;
   margin-top: 100px;

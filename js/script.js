@@ -1,11 +1,14 @@
 //navBG function manage the transparency of the navbar plus update the scrollTop value to be used by the hambuger menu
-let scrollTopValue = document.documentElement.scrollTop;
 const hbMenu = document.querySelector(".mobile-menu");
+const hbMenuLi = document.querySelector('.menu ul');
+
+let scrollTopValue = document.documentElement.scrollTop;
 let hbIsHidden = false;
 
+//adding an even listener to make the transparency of the navbar dinamic
 document.addEventListener("scroll",navBG);
 
-
+// callback function for the transparency
 function navBG(){
 
     let navbar = document.querySelector("nav");
@@ -17,10 +20,15 @@ function navBG(){
     }
 }
 
+// event listener for the action onthe navbar
 hbMenu.addEventListener("click",function(){
     hbIsHidden = showHbMenu(hbIsHidden)
 });
+hbMenuLi.addEventListener("click",function(){
+    hbIsHidden = showHbMenu(hbIsHidden);
+});
 
+// this function manage the animation of the drop down menu
 function showHbMenu (menuHidden) { 
     let menu = document.querySelector(".menu");
 
@@ -50,7 +58,7 @@ function showHbMenu (menuHidden) {
     }
 }
 
-// function to manage the transparency of the nav based on the scrol top
+// function to manage the transparency of the nav based on the scrol top and the click event
 // @status is 0 if drop down menu is hidden
 // @status is 1 if drop down menu is visible
 function navBgOnClick(status){
@@ -69,6 +77,7 @@ function navBgOnClick(status){
 let textWrapper = document.querySelector('.ml1 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+// animation of the h1
 anime.timeline().add({
         targets: '.ml1 .letter',
         scale: [0.3,1],
@@ -87,19 +96,22 @@ anime.timeline().add({
         delay: (el, i, l) => 80 * (l - i)
     });
 
-function activeLiChange(){
-    let activeLi = document.querySelector("li.active");
-    if(this != activeLi){
-        this.classList.add("active");
-        activeLi.classList.remove("active");
-    }
-}
 
-const ul = document.querySelectorAll("nav ul li");
+const ul = document.querySelectorAll("header ul li");
 
 ul.forEach(li => {
     li.addEventListener("click", activeLiChange);
 });
+
+// animation of the li change
+function activeLiChange(){
+    let activeLi = document.querySelector("li.active");
+    if(this != activeLi){
+        this.classList.add("active");
+        console.log(activeLi.classList.remove("active"));
+        activeLi.classList.remove("active");
+    }
+}
 
  // portfolio
  $('.gallery ul li a').click(function() {

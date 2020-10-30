@@ -1,12 +1,7 @@
 header{
 
     @extend %nav-text-style;
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
+    
     .menu{
         display: flex;
         margin-top: $navHegth;
