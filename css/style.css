@@ -74,6 +74,7 @@ header .menu {
   text-align: center;
   padding-right: 20px;
   opacity: 0;
+  touch-action: none;
 }
 header .menu ul {
   list-style: none;
@@ -149,6 +150,7 @@ nav {
   align-items: center;
   padding: 0px 40px;
   transition: background-color 0.3s;
+  touch-action: none;
 }
 nav span.logo {
   font-size: 30px;
