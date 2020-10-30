@@ -7,7 +7,6 @@ document.addEventListener("scroll",navBG);
 
 
 function navBG(){
-    console.log(hbIsHidden + " " + scrollTopValue);
 
     let navbar = document.querySelector("nav");
     scrollTopValue = document.documentElement.scrollTop;
@@ -26,7 +25,6 @@ function showHbMenu (menuHidden) {
     let menu = document.querySelector(".menu");
 
     if(!menuHidden){
-        console.log("showMenu: " + menuHidden);
         navBgOnClick(menuHidden);
         anime.timeline().add({
             targets: '.menu',
@@ -38,7 +36,6 @@ function showHbMenu (menuHidden) {
         })
         return true;
     }else {
-        console.log("showMenu: " + menuHidden);
         navBgOnClick(menuHidden);
         // navbar.classList.remove("scroll");
         anime.timeline().add({
@@ -58,7 +55,6 @@ function showHbMenu (menuHidden) {
 // @status is 1 if drop down menu is visible
 function navBgOnClick(status){
     let navbar = document.querySelector("nav");
-    console.log("navBg: " + status);
 
     if(!status){
         navbar.classList.add('scroll');
@@ -108,17 +104,17 @@ ul.forEach(li => {
  // portfolio
  $('.gallery ul li a').click(function() {
     let itemID = $(this).attr('href');
-    $('.gallery ul').addClass('item_open');
+    $('.close').addClass('item_open');
     $(itemID).addClass('item_open');
     return false;
 });
 $('.close').click(function() {
-    $('.port, .gallery ul').removeClass('item_open');
+    $('.port, .close').removeClass('item_open');
     return false;
 });
 
-$(".gallery ul li a").click(function() {
-    $('html, body').animate({
-        scrollTop: parseInt($("#top").offset().top)
-    }, 400);
-});
+// $(".gallery ul li a").click(function() {
+//     $('html, body').animate({
+//         scrollTop: parseInt($("#top").offset().top)
+//     }, 400);
+// });

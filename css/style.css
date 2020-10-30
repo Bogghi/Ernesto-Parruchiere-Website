@@ -141,7 +141,7 @@ header .hero p {
 
 nav {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   width: 100%;
   height: 100px;
   background-color: transparent;
@@ -376,12 +376,12 @@ main .close {
   right: 10px;
   top: -121px;
   opacity: 1;
-  z-index: 1004;
+  z-index: 3;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-main .item_open .close {
+main .item_open.close {
   opacity: 1;
   margin-top: 40px;
   margin-right: 60px;
