@@ -68,7 +68,7 @@ header .menu {
   background-color: #003a4c;
   width: 100%;
   height: 0px;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   justify-content: center;
   text-align: center;

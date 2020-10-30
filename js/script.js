@@ -1,5 +1,76 @@
+//navBG function manage the transparency of the navbar plus update the scrollTop value to be used by the hambuger menu
+let scrollTopValue = document.documentElement.scrollTop;
+const hbMenu = document.querySelector(".mobile-menu");
+let hbIsHidden = false;
+
+document.addEventListener("scroll",navBG);
+
+
+function navBG(){
+    console.log(hbIsHidden + " " + scrollTopValue);
+
+    let navbar = document.querySelector("nav");
+    scrollTopValue = document.documentElement.scrollTop;
+    if(scrollTopValue > 100 && !hbIsHidden){
+        navbar.classList.add("scroll");
+    }else if(scrollTopValue < 100 && !hbIsHidden){
+        navbar.classList.remove("scroll");
+    }
+}
+
+hbMenu.addEventListener("click",function(){
+    hbIsHidden = showHbMenu(hbIsHidden)
+});
+
+function showHbMenu (menuHidden) { 
+    let menu = document.querySelector(".menu");
+
+    if(!menuHidden){
+        console.log("showMenu: " + menuHidden);
+        navBgOnClick(menuHidden);
+        anime.timeline().add({
+            targets: '.menu',
+            opacity: [0,1],
+            height: "320px",
+            easing: "linear",
+            duration: 200,
+            delay: (el, i) => 70 * (i+1)
+        })
+        return true;
+    }else {
+        console.log("showMenu: " + menuHidden);
+        navBgOnClick(menuHidden);
+        // navbar.classList.remove("scroll");
+        anime.timeline().add({
+            targets: ".menu",
+            opacity: 0,
+            height: "0px",
+            duration: 200,
+            easing: "easeOutExpo"
+            // delay: 00
+          });
+        return false;
+    }
+}
+
+// function to manage the transparency of the nav based on the scrol top
+// @status is 0 if drop down menu is hidden
+// @status is 1 if drop down menu is visible
+function navBgOnClick(status){
+    let navbar = document.querySelector("nav");
+    console.log("navBg: " + status);
+
+    if(!status){
+        navbar.classList.add('scroll');
+    }else if(status && scrollTopValue < 100){
+        navbar.classList.remove('scroll');
+    }
+
+}
+
+
 // Wrap every letter in a span
-var textWrapper = document.querySelector('.ml1 .letters');
+let textWrapper = document.querySelector('.ml1 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline().add({
@@ -34,43 +105,9 @@ ul.forEach(li => {
     li.addEventListener("click", activeLiChange);
 });
 
-function showHbMenu (showVar) { 
-    let menu = document.querySelector(".menu");
-    let displayStatus = menu.style.display;
-
-    if(!showVar){
-        anime.timeline().add({
-            targets: '.menu',
-            opacity: [0,1],
-            height: "320px",
-            easing: "linear",
-            duration: 200,
-            delay: (el, i) => 70 * (i+1)
-        })
-        return true;
-    }else {
-        anime.timeline().add({
-            targets: ".menu",
-            opacity: 0,
-            height: "0px",
-            duration: 200,
-            easing: "easeOutExpo"
-            // delay: 00
-          });
-        return false;
-    }
-}
-
-const hbMenu = document.querySelector(".mobile-menu");
-var isHidden = false;
-
-hbMenu.addEventListener("click",function(){
-    isHidden = showHbMenu(isHidden)
-});
-
  // portfolio
  $('.gallery ul li a').click(function() {
-    var itemID = $(this).attr('href');
+    let itemID = $(this).attr('href');
     $('.gallery ul').addClass('item_open');
     $(itemID).addClass('item_open');
     return false;
@@ -85,15 +122,3 @@ $(".gallery ul li a").click(function() {
         scrollTop: parseInt($("#top").offset().top)
     }, 400);
 });
-
-
-document.addEventListener("scroll",navBG);
-
-function navBG(){
-    let navbar = document.querySelector("nav");
-    if(document.documentElement.scrollTop > 100){
-        navbar.classList.add("scroll");
-    }else if(document.documentElement.scrollTop < 100){
-        navbar.classList.remove("scroll");
-    }
-}
