@@ -1,3 +1,16 @@
+let toDest = 0, currentPosition = 0;
+
+//variable and code to save the link to navigate in the page
+let a = document.querySelectorAll("a");
+let aArray = [];
+
+a.forEach(aElement => {
+    let currentName = aElement.getAttribute("name");
+    if(isNaN(currentName)){
+       aArray.push(aElement);
+    }
+})
+
 //navBG function manage the transparency of the navbar plus update the scrollTop value to be used by the hambuger menu
 const hbMenu = document.querySelector(".mobile-menu");
 const hbMenuLi = document.querySelector('.menu ul');
@@ -34,6 +47,7 @@ function showHbMenu (menuHidden) {
 
     if(!menuHidden){
         navBgOnClick(menuHidden);
+        document.querySelector(".menu").style.display = "flex";
         anime.timeline().add({
             targets: '.menu',
             opacity: [0,1],
@@ -45,7 +59,7 @@ function showHbMenu (menuHidden) {
         return true;
     }else {
         navBgOnClick(menuHidden);
-        // navbar.classList.remove("scroll");
+        document.querySelector(".menu").style.display = "none";
         anime.timeline().add({
             targets: ".menu",
             opacity: 0,
@@ -97,21 +111,55 @@ anime.timeline().add({
     });
 
 
-const ul = document.querySelectorAll("header ul");
+const ul = document.querySelectorAll("header ul li");
 
-ul.forEach(list => {
-    list.addEventListener("click", activeLiChange);
+ul.forEach(li => {
+    li.addEventListener("click", activeLiChange);
 });
 
 // animation of the li change
-function activeLiChange(e){
-    let activeLi = e.currentTarget.querySelector("li.active");
+function activeLiChange(){
+    let activeLi = document.querySelectorAll("li.active");
 
-    if(!e.currentTarget.isEqualNode(activeLi)){
-        e.target.classList.add("active");
-        activeLi.classList.remove("active");
+    activeLi.forEach(li => {
+        if(!this.isEqualNode(li)){
+            this.classList.add("active");
+            li.classList.remove("active")
+        }
+    });
+
+    let clickedDest = document.querySelector("a li.active").parentElement;
+    // console.log(clickedDest.getAttribute("id"));
+    scroll(clickedDest.getAttribute("id"));
+}
+
+function scroll(destIndex) {
+    toDest = getDistanceFromTop(aArray[destIndex]);
+    pageScroll(toDest);
+    if(destIndex == 4){
+        toDest = currentPosition = 0;
     }
 }
+
+function getDistanceFromTop(element) {
+    var yPos = -100;
+
+    while(element) {
+        yPos += (element.offsetTop);
+        element = element.offsetParent;
+    }
+
+    return yPos;
+}
+
+function pageScroll() {
+    if(currentPosition < toDest){
+        window.scrollBy(0,50);
+        currentPosition += 50;
+        scrolldelay = setTimeout(pageScroll,10);
+    }
+}
+
 
  // portfolio
  $('.gallery ul li a').click(function() {
@@ -125,8 +173,5 @@ $('.close').click(function() {
     return false;
 });
 
-// $(".gallery ul li a").click(function() {
-//     $('html, body').animate({
-//         scrollTop: parseInt($("#top").offset().top)
-//     }, 400);
-// });
+
+

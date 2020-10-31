@@ -3,7 +3,7 @@ header{
     @extend %nav-text-style;
     
     .menu{
-        display: flex;
+        display: none;
         margin-top: $navHegth;
         background-color: $primaryColor;
         width: 100%;

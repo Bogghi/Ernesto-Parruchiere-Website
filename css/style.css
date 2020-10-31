@@ -64,7 +64,7 @@ header {
 }
 
 header .menu {
-  display: flex;
+  display: none;
   margin-top: 100px;
   background-color: #003a4c;
   width: 100%;
@@ -417,6 +417,7 @@ footer .footer-content hr {
 footer .footer-content ul {
   list-style: none;
   padding: 0px;
+  margin-bottom: 10px;
 }
 footer .footer-content ul li {
   padding: 5px 0px;
