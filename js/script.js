@@ -129,16 +129,12 @@ function activeLiChange(){
     });
 
     let clickedDest = document.querySelector("a li.active").parentElement;
-    // console.log(clickedDest.getAttribute("id"));
     scroll(clickedDest.getAttribute("id"));
 }
 
 function scroll(destIndex) {
     toDest = getDistanceFromTop(aArray[destIndex]);
-    pageScroll(toDest);
-    if(destIndex == 4){
-        toDest = currentPosition = 0;
-    }
+    pageScroll();
 }
 
 function getDistanceFromTop(element) {
@@ -157,6 +153,8 @@ function pageScroll() {
         window.scrollBy(0,50);
         currentPosition += 50;
         scrolldelay = setTimeout(pageScroll,10);
+    }else {
+        toDest = currentPosition = 0;
     }
 }
 
