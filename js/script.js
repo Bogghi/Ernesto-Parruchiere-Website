@@ -171,5 +171,10 @@ $('.close').click(function() {
     return false;
 });
 
+$('.services .card a').click(function () {
+    $('.test').addClass('item_open');
+    $('.test').addClass('item_open');
+});
+
 
 
