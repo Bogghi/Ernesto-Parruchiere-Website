@@ -172,8 +172,21 @@ $('.close').click(function() {
 });
 
 $('.services .card a').click(function () {
-    $('.test').addClass('item_open');
-    $('.test').addClass('item_open');
+    let list = $(this).attr('id') == 'hair';
+    
+    $('.closePrice').addClass('item_open');
+    if(list){
+        $('#hairPrice').addClass('item_open');
+    }else{
+        $('#beardPrice').addClass('item_open');
+    }
+
+    return false;
+});
+
+$('.closePrice').click(function() {
+    $('.closePrice, .price-list').removeClass('item_open');
+    return false;
 });
 
 
