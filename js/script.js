@@ -11,7 +11,7 @@ a.forEach(aElement => {
     }
 })
 
-//navBG function manage the transparency of the navbar plus update the scrollTop value to be used by the hambuger menu
+//navBG function manage the transparency of the navbar   plus update the scrollTop value to be used by the hambuger menu
 const hbMenu = document.querySelector(".mobile-menu");
 const hbMenuLi = document.querySelector('.menu ul');
 

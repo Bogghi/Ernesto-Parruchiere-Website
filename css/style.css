@@ -263,7 +263,7 @@ main .services .price-list {
   width: 100%;
   height: 100%;
   color: #ffffff;
-  background-color: #003a4c;
+  background-color: #00485e;
   z-index: 2;
   visibility: initial;
   -webkit-transform: translateY(-100%);
@@ -575,6 +575,10 @@ footer .footer-content ul li span {
   }
   main .port:last-child {
     padding-bottom: 80px;
+  }
+
+  .services .price-list {
+    z-index: 4;
   }
 }
 @media screen and (max-width: 800px) {
