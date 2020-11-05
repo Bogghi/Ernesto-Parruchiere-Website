@@ -70,6 +70,9 @@
     color: $tertiaryColor;
     font-size: 35px;
     text-shadow: 1px 1px $secondaryColor;
+    img{
+        color: white;
+    }
 }
 .item_open.closePrice {
      opacity: 1;
