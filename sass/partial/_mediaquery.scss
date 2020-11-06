@@ -44,6 +44,7 @@
             visibility: visible;
             position: relative;
             border-bottom: 0px;
+            -webkit-transform: translateY(0%);
             transform: translateY(0%);
 
             img {
@@ -68,6 +69,19 @@
                 padding-bottom: 80px;
             }
 
+        }
+    }
+
+    .price-list {
+        ul{
+            li{
+                font-size: 15px;
+                padding-left: 20px;
+                span{
+                    font-size: 20px;
+                    white-space: nowrap;
+                }
+            }
         }
     }
 
