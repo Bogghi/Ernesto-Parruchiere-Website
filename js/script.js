@@ -1,16 +1,3 @@
-let toDest = 0, currentPosition = 0;
-
-//variable and code to save the link to navigate in the page
-let a = document.querySelectorAll("a");
-let aArray = [];
-
-a.forEach(aElement => {
-    let currentName = aElement.getAttribute("name");
-    if(isNaN(currentName)){
-       aArray.push(aElement);
-    }
-})
-
 //navBG function manage the transparency of the navbar   plus update the scrollTop value to be used by the hambuger menu
 const hbMenu = document.querySelector(".mobile-menu");
 const hbMenuLi = document.querySelector('.menu ul');
@@ -33,7 +20,7 @@ function navBG(){
     }
 }
 
-// event listener for the action onthe navbar
+// event listener for the action on the navbar
 hbMenu.addEventListener("click",function(){
     hbIsHidden = showHbMenu(hbIsHidden)
 });
@@ -127,36 +114,17 @@ function activeLiChange(){
             li.classList.remove("active")
         }
     });
-
-    let clickedDest = document.querySelector("a li.active").parentElement;
-    scroll(clickedDest.getAttribute("id"));
 }
 
 function scroll(destIndex) {
-    toDest = getDistanceFromTop(aArray[destIndex]);
+    let elmDistance = getDistanceFromTop(aArray[destIndex]);
+    console.log(elmDistance);
+    toDest = elmDistance - toDest;
+    console.log("toDest: " + toDest);
     pageScroll();
 }
 
-function getDistanceFromTop(element) {
-    var yPos = -100;
 
-    while(element) {
-        yPos += (element.offsetTop);
-        element = element.offsetParent;
-    }
-
-    return yPos;
-}
-
-function pageScroll() {
-    if(currentPosition < toDest){
-        window.scrollBy(0,50);
-        currentPosition += 50;
-        scrolldelay = setTimeout(pageScroll,10);
-    }else {
-        toDest = currentPosition = 0;
-    }
-}
 
 
  // portfolio
