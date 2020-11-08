@@ -8,6 +8,8 @@ class scrollOjb {
         this.currentPosition = document.documentElement.scrollTop;
         this.index = this.scrollPointArray(pointer);
         this.pointerIndex = "placeholder";
+        this.dest = 0;
+        this.dir = '';
         console.log(this.index);
     }
 
@@ -52,10 +54,68 @@ class scrollOjb {
     
         return yPos;
     }
+
+    /* update the value of the attribute currentPosition
+    this method can be attached to a event listener on the scroll event to keep track of where we are in the page
+    */
+    updateCurrentPosotion(){
+        this.currentPosition = document.documentElement.scrollTop;
+    }
+    
+    /* select and manage the scroll direction calling the pageScroll method
+    
+    @id is the index id to get the element to scroll to
+    @dest populate the dest variable to indicate where we have to stop
+    */
+    scrollTo(id){
+        this.dest = this.index[id].topDist;
+        if(this.dest > this.currentPosition){
+            this.dir = 'down';
+            setTimeout(this.pageScroll(),1000);
+        }else if(this.dest < this.currentPosition){
+            this.dir = 'up';
+            setTimeout(this.pageScroll(),1000);
+        }
+        this.dest = 0;
+    }
+
+    /* based on the @dir parameter we get scroll up or down
+    
+    @dir variable that is valued up/down and indicate if we are scrolling up or down
+    */
+    pageScroll() { 
+        if(this.dir == 'up'){
+
+            while(this.currentPosition > this.dest){
+                console.log("currentPosition: "+this.currentPosition+" dest: "+this.dest);
+                this.currentPosition -= 50;
+                setTimeout(function(){
+                    window.scrollBy(0,-50);
+                },10);
+            }
+
+        }else if(this.dir == 'down') {
+
+                while(this.currentPosition < this.dest){
+                    console.log("currentPosition: "+this.currentPosition+" dest: "+this.dest);
+                    this.currentPosition += 50;
+                    setTimeout(function(){
+                        window.scrollBy(0,50);
+                    },10);
+                }
+
+        }
+    }
     
 }
 
-let a = new scrollOjb("#scroll-point","");
+let a = new scrollOjb("#scroll-point");
+
+document.addEventListener("scroll",function(){
+    a.updateCurrentPosotion();
+});
+
+// console.log(a.updateCurrentPosotion());
 
 //     let clickedDest = document.querySelector("a li.active").parentElement;
 //     scroll(clickedDest.getAttribute("id"));
