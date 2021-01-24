@@ -355,6 +355,7 @@ main .gallery {
 }
 main .gallery ul {
   padding-top: 50px;
+  padding-left: 0px;
   display: flex;
 }
 main .gallery ul li {
@@ -432,17 +433,6 @@ main .port {
 }
 main .port img {
   width: 40%;
-}
-main .port .description {
-  width: 30%;
-  max-height: 100%;
-  padding: 0 40px 40px;
-  overflow: auto;
-}
-main .port .description h1 {
-  font-size: 35px;
-  line-height: 2.3;
-  padding: 0;
 }
 main .port > * {
   opacity: 0;
