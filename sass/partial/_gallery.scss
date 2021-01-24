@@ -23,6 +23,7 @@ a {
 
     ul {
         padding-top: 50px;
+        padding-left: 0px;
         display: flex;
 
         li {
@@ -118,19 +119,6 @@ a {
 
     img {
         width: 40%; 
-    }
-
-    .description {
-        width: 30%;
-        max-height: 100%;
-        padding: 0 40px 40px;
-        overflow: auto; 
-
-        h1 {
-            font-size: 35px;
-            line-height: 2.3;
-            padding: 0; 
-        }
     }
 
     &> * {
