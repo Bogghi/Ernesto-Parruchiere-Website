@@ -7,3 +7,5 @@ Technology used:
 - html
 - scss
 - js + anime for animation
+
+this is deployed on netflify at this [link](https://ernestoparrucchiere.it/)
